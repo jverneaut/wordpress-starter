@@ -1,5 +1,6 @@
 var path = require('path');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+var webpack = require('webpack');
 
 module.exports = {
   entry: ['./js/index.js', './scss/main.scss'],
@@ -9,6 +10,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.css'
     })
@@ -38,4 +40,3 @@ module.exports = {
     ]
   }
 };
-
